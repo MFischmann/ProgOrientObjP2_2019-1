@@ -3,7 +3,7 @@ public class Peixe extends Animal{
     private boolean aguaDoce;
 
     public Peixe(int id, String nome, float peso, boolean pet, boolean aguaDoce){
-        super(id, nome, peso, pet)
+        super(id, nome, peso, pet);
         this.aguaDoce = aguaDoce;
         this.aguaSalgada = !aguaDoce;
     }
