@@ -60,23 +60,12 @@ public class App{
             System.out.println("Q6");
             lista.add(new Peixe(23,"Tubarao", 120, false, false));
             //List<Peixe> lstPAD = seleciona(lista, (Animal a) -> (a.getPeso() > 50));
-            List<Animal> lstPeixes = seleciona(lista, peixe -> (peixe instanceof Peixe));
-            
-            //List<Peixe> peixes = new ArrayList<Peixe>();
+            //List<Animal> lstPeixes = seleciona(lista, peixe -> (peixe instanceof Peixe));
+            List<Animal> lstPeixes = seleciona(lista, pad->((pad instanceof Peixe) && ((Peixe)pad).isAguaDoce()));
 
             for (Animal animal : lstPeixes) {
-                //Peixe p = (Peixe) animal;
                 System.out.println(animal);
-               //peixes.add((Peixe) animal);
-
-                //System.out.println(p);
-                //System.out.println(p.isAguaDoce());
             }
-           // List<Peixe> ltsFinal = seleciona(peixes, f->  f.isAguaDoce());
-            /*
-            for (Animal animal : ltsFinal) {
-                System.out.println(animal);
-            }*/
         } 
         catch (PesoInvalidoException e) {
             System.out.println("Animal nao pode ter peso negativo.");
