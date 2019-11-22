@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Predicate;
 
 public class App{
     public static void main(String[] args){
@@ -57,7 +58,25 @@ public class App{
             maisCinquenta(lista);
 
             System.out.println("Q6");
+            lista.add(new Peixe(23,"Tubarao", 120, false, false));
+            //List<Peixe> lstPAD = seleciona(lista, (Animal a) -> (a.getPeso() > 50));
+            List<Animal> lstPeixes = seleciona(lista, peixe -> (peixe instanceof Peixe));
+            
+            //List<Peixe> peixes = new ArrayList<Peixe>();
 
+            for (Animal animal : lstPeixes) {
+                //Peixe p = (Peixe) animal;
+                System.out.println(animal);
+               //peixes.add((Peixe) animal);
+
+                //System.out.println(p);
+                //System.out.println(p.isAguaDoce());
+            }
+           // List<Peixe> ltsFinal = seleciona(peixes, f->  f.isAguaDoce());
+            /*
+            for (Animal animal : ltsFinal) {
+                System.out.println(animal);
+            }*/
         } 
         catch (PesoInvalidoException e) {
             System.out.println("Animal nao pode ter peso negativo.");
@@ -94,5 +113,21 @@ public class App{
     public static void maisCinquenta(List<Animal> lst){
         lst.stream().filter(a -> a.getPeso()>50).forEach(a->System.out.println(a.getNome()));
     }
+    /* ERRADO
+    public static List<Animal> selecionaPeixeAguaDoce(List<Animal> lst, Selecionador select){
+        List<Animal> peixeADoce = new ArrayList<Animal>();
+        peixeADoce = select.seleciona(lst, );
+        return peixeADoce;
+    }*/
 
+    //Correto
+    public static List<Animal> seleciona(List<Animal> lst, Predicate<Animal> f){
+        List<Animal> selecionado = new ArrayList<>();
+        for (Animal animal : lst) {
+            if(f.test(animal)){
+                selecionado.add(animal);
+            }
+        }
+        return selecionado;
+    }
 }

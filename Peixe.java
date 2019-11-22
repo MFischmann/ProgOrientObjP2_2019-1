@@ -15,4 +15,16 @@ public class Peixe extends Animal{
     public boolean isAguaSalgada(){
         return aguaSalgada;
     }
+
+    @Override
+    public String toString() {
+        String s = super.toString();
+        if(aguaDoce){
+            s=s+", eh de agua doce";
+        }
+        else{
+            s=s+", eh de agua salgada";
+        }
+        return s;
+    }
 }
