@@ -3,7 +3,8 @@ public class Passaro extends Animal implements Protegido{
     private int nroLicensaIBAMA;
     private int anoLicenciamento;
 
-    public Passaro(int id, String nome, float peso, boolean pet, boolean voa, int licensa, int ano){
+    public Passaro(int id, String nome, float peso, boolean pet, boolean voa, int licensa, int ano)
+            throws PesoInvalidoException {
         super(id, nome, peso, pet);
         this.voa = voa;
         this.nroLicensaIBAMA = licensa;

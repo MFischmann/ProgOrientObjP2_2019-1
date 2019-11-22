@@ -2,7 +2,7 @@ public class Peixe extends Animal{
     private boolean aguaSalgada;
     private boolean aguaDoce;
 
-    public Peixe(int id, String nome, float peso, boolean pet, boolean aguaDoce){
+    public Peixe(int id, String nome, float peso, boolean pet, boolean aguaDoce) throws PesoInvalidoException {
         super(id, nome, peso, pet);
         this.aguaDoce = aguaDoce;
         this.aguaSalgada = !aguaDoce;

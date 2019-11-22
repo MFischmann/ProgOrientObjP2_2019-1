@@ -3,7 +3,8 @@ public class Mamifero extends Animal{
     private boolean herbivoro;
     private boolean onivoro;
 
-    public Mamifero(int id, String nome, float peso, boolean pet, boolean carnivoro, boolean herbivoro){
+    public Mamifero(int id, String nome, float peso, boolean pet, boolean carnivoro, boolean herbivoro)
+            throws PesoInvalidoException {
         super(id, nome, peso, pet);
         this.carnivoro = carnivoro;
         this.herbivoro = herbivoro;

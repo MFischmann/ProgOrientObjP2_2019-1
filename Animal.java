@@ -5,11 +5,14 @@ public class Animal {
     private boolean pet;
     private int id;
   
-    public Animal(int id,String nome,float peso,boolean pet){
-      this.id = id;
-      this.nome = nome;
-      this.peso = peso;
-      this.pet = pet;
+    public Animal(int id,String nome,float peso,boolean pet) throws PesoInvalidoException {
+        if(peso < 0){
+            throw new PesoInvalidoException("Peso nao pode ser negativo");
+        }
+        this.id = id;
+        this.nome = nome;
+        this.peso = peso;
+        this.pet = pet;
     }
   
     public int getId() { return id; }
