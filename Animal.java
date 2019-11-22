@@ -31,7 +31,7 @@ public class Animal {
     public String toString(){
       String str = getNome()+", "+getPeso()+"kgs";
       if (isPet() == true){
-        str = str + ", é um pet";
+        str = str + ", eh um pet";
       }
       return str;
     }
