@@ -56,17 +56,28 @@ public class App{
             System.out.println("Q5");
             maisCinquenta(lista);
 
+            System.out.println("Q6");
+
         } 
         catch (PesoInvalidoException e) {
             System.out.println("Animal nao pode ter peso negativo.");
         }
 
     }
-
+    /**
+     * Q2
+     * @param lst
+     * @return nrm passaros
+     */
     public static long countPassaroProt(List<Protegido> lst){
         return lst.stream().filter(p -> p instanceof Passaro).count();
     }
-
+    /**
+     * Q4
+     * @param a conjunto 1
+     * @param b conjunto 2
+     * @return interseccao conjuntos
+     */
     public static Set<Animal> animaisDuplicados(Set<Animal> a, Set<Animal> b){
         Set<Animal> dupAnimais = new HashSet<>();
         for (Animal animal : a) {
@@ -76,9 +87,12 @@ public class App{
         }
         return dupAnimais;
     }
-
+    /**
+     * Q5
+     * @param lst lista animais
+     */
     public static void maisCinquenta(List<Animal> lst){
         lst.stream().filter(a -> a.getPeso()>50).forEach(a->System.out.println(a.getNome()));
-
     }
+
 }
